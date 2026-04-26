@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101114">
+    <meta name="description" content="Folarm support page for help with alarms, permissions, missions, and troubleshooting.">
+    <title>Folarm Support</title>
+    <style>
+        :root {
+            --bg-base: #101114;
+            --bg-panel: rgba(255, 255, 255, 0.045);
+            --bg-panel-hover: rgba(255, 255, 255, 0.065);
+            --border-subtle: rgba(255, 255, 255, 0.10);
+            --border-card: rgba(255, 255, 255, 0.075);
+            --text-primary: rgba(255, 255, 255, 0.94);
+            --text-secondary: rgba(255, 255, 255, 0.62);
+            --text-tertiary: rgba(255, 255, 255, 0.40);
+            --sunrise: #ffb36b;
+            --coral: #ff7b7b;
+            --mint: #64d6bd;
+            --sky: #84c7ff;
+            --lavender: #c8b6ff;
+            --warning: #ffd083;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+            color: var(--text-primary);
+            background:
+                linear-gradient(180deg, rgba(255, 179, 107, 0.07) 0%, rgba(16, 17, 20, 0) 34%),
+                linear-gradient(135deg, #101114 0%, #17191f 50%, #11171a 100%);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 24px 48px;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 26px;
+        }
+
+        .app-mark {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+            background:
+                linear-gradient(145deg, rgba(255, 179, 107, 0.96), rgba(255, 123, 123, 0.92) 48%, rgba(132, 199, 255, 0.72));
+            box-shadow: 0 18px 48px rgba(255, 123, 123, 0.18);
+            position: relative;
+            flex: 0 0 auto;
+        }
+
+        .app-mark::before,
+        .app-mark::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16, 17, 20, 0.78);
+        }
+
+        .app-mark::before {
+            width: 18px;
+            height: 18px;
+            top: 12px;
+            border-radius: 50%;
+            border: 3px solid rgba(16, 17, 20, 0.78);
+            background: transparent;
+        }
+
+        .app-mark::after {
+            width: 16px;
+            height: 3px;
+            top: 31px;
+            border-radius: 999px;
+        }
+
+        .eyebrow {
+            color: var(--text-tertiary);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-bottom: 14px;
+            font-size: clamp(2.15rem, 8vw, 2.75rem);
+            font-weight: 760;
+            letter-spacing: 0;
+            line-height: 1.08;
+            background: linear-gradient(135deg, var(--sunrise) 0%, var(--coral) 48%, var(--sky) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro {
+            margin-bottom: 46px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            font-size: 1.14rem;
+            font-weight: 680;
+            letter-spacing: 0;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--mint);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--sky);
+        }
+
+        .card,
+        .faq-item,
+        .notice {
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            background: var(--bg-panel);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .card {
+            padding: 26px;
+            margin-bottom: 20px;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card:hover,
+        .faq-item:hover {
+            border-color: var(--border-subtle);
+            background: var(--bg-panel-hover);
+        }
+
+        .card p:last-child,
+        .notice p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card--sunrise { border-left: 2px solid var(--sunrise); }
+        .card--coral { border-left: 2px solid var(--coral); }
+        .card--mint { border-left: 2px solid var(--mint); }
+        .card--sky { border-left: 2px solid var(--sky); }
+        .card--lavender { border-left: 2px solid var(--lavender); }
+
+        .section-label {
+            margin: 46px 0 18px;
+            color: var(--text-tertiary);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .features,
+        .steps {
+            display: grid;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .features li,
+        .steps li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .features li::before,
+        .steps li::before {
+            content: "";
+            position: absolute;
+            top: 0.78em;
+            left: 4px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--sunrise);
+            opacity: 0.82;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            padding: 22px 24px;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .faq-item strong {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--text-primary);
+            font-size: 0.96rem;
+            font-weight: 660;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 0.92rem;
+        }
+
+        .notice {
+            margin-bottom: 20px;
+            padding: 24px 26px;
+            border-color: rgba(255, 208, 131, 0.18);
+            background: linear-gradient(135deg, rgba(255, 208, 131, 0.12), rgba(255, 255, 255, 0.04));
+        }
+
+        .notice h2 {
+            color: var(--warning);
+            font-size: 1.04rem;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.86rem;
+        }
+
+        footer span,
+        footer a {
+            color: var(--text-tertiary);
+        }
+
+        footer a:hover {
+            color: var(--mint);
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                padding: 48px 18px 36px;
+            }
+
+            .brand-row {
+                gap: 12px;
+            }
+
+            .app-mark {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+            }
+
+            .card,
+            .faq-item,
+            .notice {
+                padding: 21px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="brand-row">
+            <div class="app-mark" aria-hidden="true"></div>
+            <div>
+                <p class="eyebrow">Folarm for iPhone</p>
+                <h1>Folarm Support</h1>
+            </div>
+        </div>
+
+        <p class="intro">Folarm is a mission-based alarm app designed to help you actually get out of bed. If you need help with alarms, permissions, missions, or anything else, contact us and we will do our best to help.</p>
+
+        <div class="card card--sunrise">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a></p>
+            <p>Website: <a href="index.html">Folarm support site</a></p>
+            <p>App: Folarm for iPhone</p>
+        </div>
+
+        <p class="section-label">What Folarm Does</p>
+
+        <div class="card card--sky">
+            <h2>Mission-Based Alarms</h2>
+            <p>Folarm turns alarms into wake-up missions. Instead of simply tapping stop, you complete a small challenge like taking an awake selfie, capturing the sky, making the bed, or finishing a quick physical task.</p>
+            <ul class="features">
+                <li>Set iPhone alarms with a wake-up mission attached</li>
+                <li>Choose missions designed to get your mind and body moving</li>
+                <li>Complete the mission to finish the wake-up flow</li>
+                <li>Use the app without sign-up, login, or cloud account setup</li>
+            </ul>
+        </div>
+
+        <p class="section-label">Common Help Topics</p>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <strong>1. My alarm did not ring</strong>
+                <p>Please make sure your iPhone is running the latest supported iOS version, notifications are allowed for Folarm, and any required alarm permissions are enabled. Also make sure your volume is on and the alarm was saved successfully.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>2. Camera missions are not working</strong>
+                <p>Folarm needs camera access for missions like awake selfies or photo-based wake checks. You can enable camera access in Settings &gt; Privacy &amp; Security &gt; Camera &gt; Folarm.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>3. I denied a permission by mistake</strong>
+                <p>You can update permissions anytime in the iPhone Settings app. Open Settings, find Folarm, and enable the permissions you want to use.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>4. My mission is too difficult in the morning</strong>
+                <p>You can edit or replace the mission when creating or editing an alarm.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>5. Does Folarm need an account?</strong>
+                <p>No. Folarm is designed to work without sign-up, login, or cloud account setup.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>6. Does Folarm store my data online?</strong>
+                <p>Folarm is built to be local-first. Your app data is stored on your device unless future features explicitly say otherwise.</p>
+            </div>
+        </div>
+
+        <p class="section-label">Troubleshooting</p>
+
+        <div class="card card--mint">
+            <h2>If Folarm Is Not Behaving As Expected</h2>
+            <ul class="steps">
+                <li>Close and reopen the app</li>
+                <li>Check that the latest version is installed</li>
+                <li>Review permissions in iPhone Settings</li>
+                <li>Delete and recreate the alarm</li>
+                <li>Restart your iPhone if needed</li>
+            </ul>
+        </div>
+
+        <div class="card card--lavender">
+            <h2>Feature Requests and Bug Reports</h2>
+            <p>We welcome bug reports, suggestions, and improvement ideas. If you contact support, include:</p>
+            <ul class="steps">
+                <li>Your iPhone model</li>
+                <li>iOS version</li>
+                <li>Folarm version</li>
+                <li>A short description of the issue</li>
+                <li>Screenshots if helpful</li>
+            </ul>
+        </div>
+
+        <div class="notice">
+            <h2>Response Time</h2>
+            <p>We aim to respond as quickly as possible, usually within a few business days.</p>
+        </div>
+
+        <div class="card card--coral">
+            <h2>Contact Us</h2>
+            <p>For all support requests, email <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a>.</p>
+            <p>Read the full <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+        <footer>
+            <span>Contact: <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a></span>
+            <span>Developer: Kanishk Tiwari</span>
+            <span>App: Folarm</span>
+        </footer>
+    </main>
+</body>
+</html>
