@@ -306,7 +306,7 @@
             </div>
         </div>
 
-        <p class="intro">Folarm is a mission-based alarm app designed to help you actually get out of bed. If you need help with alarms, permissions, missions, or anything else, contact us and we will do our best to help.</p>
+        <p class="intro">Folarm is an iPhone alarm app designed to help you get out of bed with a Wake Up Selfie check. If you need help with alarms, permissions, selfie verification, or anything else, contact us and we will do our best to help.</p>
 
         <div class="card card--sunrise">
             <h2>Contact</h2>
@@ -318,13 +318,13 @@
         <p class="section-label">What Folarm Does</p>
 
         <div class="card card--sky">
-            <h2>Mission-Based Alarms</h2>
-            <p>Folarm turns alarms into wake-up missions. Instead of simply tapping stop, you complete a small challenge like taking an awake selfie, capturing the sky, making the bed, or finishing a quick physical task.</p>
+            <h2>Wake Up Selfie Alarms</h2>
+            <p>Folarm lets you schedule alarms on iPhone and complete a Wake Up Selfie flow when an alarm rings. The selfie check is designed to help confirm that you are awake before finishing the alarm flow.</p>
             <ul class="features">
-                <li>Set iPhone alarms with a wake-up mission attached</li>
-                <li>Choose missions designed to get your mind and body moving</li>
-                <li>Complete the mission to finish the wake-up flow</li>
-                <li>Use the app without sign-up, login, or cloud account setup</li>
+                <li>Schedule alarms on iPhone</li>
+                <li>Complete a Wake Up Selfie when the alarm rings</li>
+                <li>Use camera permission for selfie capture</li>
+                <li>Use the app without an account, login, subscription, or in-app purchases</li>
             </ul>
         </div>
 
@@ -333,32 +333,32 @@
         <div class="faq-grid">
             <div class="faq-item">
                 <strong>1. My alarm did not ring</strong>
-                <p>Please make sure your iPhone is running the latest supported iOS version, notifications are allowed for Folarm, and any required alarm permissions are enabled. Also make sure your volume is on and the alarm was saved successfully.</p>
+                <p>Please make sure your iPhone is running a supported iOS version, Folarm has alarm authorization, and the alarm was saved successfully. Also check your device volume, Focus settings, and whether the alarm time and repeat schedule are correct.</p>
             </div>
 
             <div class="faq-item">
-                <strong>2. Camera missions are not working</strong>
-                <p>Folarm needs camera access for missions like awake selfies or photo-based wake checks. Some camera missions may also use OpenAI's API to analyze whether your eyes appear open or awake. You can enable camera access in Settings &gt; Privacy &amp; Security &gt; Camera &gt; Folarm.</p>
+                <strong>2. Camera permission is not working</strong>
+                <p>Folarm needs camera access for the Wake Up Selfie flow. You can enable camera access in Settings &gt; Privacy &amp; Security &gt; Camera &gt; Folarm, or in Settings &gt; Apps &gt; Folarm.</p>
             </div>
 
             <div class="faq-item">
-                <strong>3. I denied a permission by mistake</strong>
-                <p>You can update permissions anytime in the iPhone Settings app. Open Settings, find Folarm, and enable the permissions you want to use.</p>
+                <strong>3. Alarm permissions are not enabled</strong>
+                <p>Folarm uses iOS alarm authorization, including AlarmKit where available, to schedule alarms. If alarm authorization was denied or disabled, open iPhone Settings, find Folarm, and enable the permissions required for alarms.</p>
             </div>
 
             <div class="faq-item">
-                <strong>4. My mission is too difficult in the morning</strong>
-                <p>You can edit or replace the mission when creating or editing an alarm.</p>
+                <strong>4. Wake Up Selfie is not working</strong>
+                <p>Make sure camera access is enabled, your face and eyes are clearly visible, and the room has enough light. If OpenAI verification is configured for selfie checks, make sure your internet connection is working.</p>
             </div>
 
             <div class="faq-item">
                 <strong>5. Does Folarm need an account?</strong>
-                <p>No. Folarm is designed to work without sign-up, login, or cloud account setup.</p>
+                <p>No. Folarm does not require account creation, login, subscription, or in-app purchases.</p>
             </div>
 
             <div class="faq-item">
-                <strong>6. Does Folarm store my data online?</strong>
-                <p>Folarm is built to be local-first. Your alarms, schedules, preferences, and progress are stored on your device. For AI-assisted camera missions, a captured image may be sent to OpenAI only to analyze whether you appear awake; Folarm does not use this to identify you or create a biometric profile.</p>
+                <strong>6. How does Folarm handle privacy and data?</strong>
+                <p>Folarm stores core alarm data and app preferences on your device. If OpenAI verification is configured for Wake Up Selfie, a captured selfie may be sent to OpenAI only to help determine whether you appear awake. Folarm does not use this to identify you or create a biometric profile.</p>
             </div>
         </div>
 
@@ -369,20 +369,21 @@
             <ul class="steps">
                 <li>Close and reopen the app</li>
                 <li>Check that the latest version is installed</li>
-                <li>Review permissions in iPhone Settings</li>
-                <li>Check your internet connection for AI-assisted camera missions</li>
+                <li>Review alarm and camera permissions in iPhone Settings</li>
+                <li>Check your internet connection if Wake Up Selfie verification uses OpenAI</li>
                 <li>Delete and recreate the alarm</li>
                 <li>Restart your iPhone if needed</li>
             </ul>
         </div>
 
         <div class="card card--lavender">
-            <h2>Feature Requests and Bug Reports</h2>
-            <p>We welcome bug reports, suggestions, and improvement ideas. If you contact support, include:</p>
+            <h2>Bug Reports</h2>
+            <p>If something is not working as expected, email support with:</p>
             <ul class="steps">
                 <li>Your iPhone model</li>
                 <li>iOS version</li>
                 <li>Folarm version</li>
+                <li>The alarm time and what happened</li>
                 <li>A short description of the issue</li>
                 <li>Screenshots if helpful</li>
             </ul>

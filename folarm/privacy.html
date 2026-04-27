@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#101114">
-    <meta name="description" content="Privacy Policy for Folarm, a private local-first mission alarm app for iPhone with limited optional image analysis.">
+    <meta name="description" content="Privacy Policy for Folarm, an iPhone alarm app with Wake Up Selfie verification.">
     <title>Folarm Privacy Policy</title>
     <style>
         :root {
@@ -227,12 +227,12 @@
         <a href="index.html" class="back-link">Support</a>
 
         <h1>Privacy Policy for Folarm</h1>
-        <p class="intro">Effective date: April 27, 2026. Folarm respects your privacy. This Privacy Policy explains how Folarm handles information when you use the app.</p>
+        <p class="intro">Effective date: [Month Day, Year]. Folarm respects your privacy. This Privacy Policy explains how Folarm handles information when you use the app.</p>
 
         <div class="card card--lavender">
             <h2>Overview</h2>
-            <p>Folarm is designed to be a private, local-first alarm app. It does not require an account to use the core product. We aim to collect as little information as possible.</p>
-            <p>Most Folarm data stays on your device. Certain camera-based missions may use OpenAI's API to analyze whether you appear awake, such as whether your eyes appear open.</p>
+            <p>Folarm is an iPhone alarm app that helps users complete a Wake Up Selfie flow when an alarm rings. Folarm does not require an account, login, subscription, or in-app purchases.</p>
+            <p>Core alarm data is stored on your device. If OpenAI verification is configured for Wake Up Selfie, a captured selfie may be sent to OpenAI's API to help determine whether you appear awake.</p>
         </div>
 
         <p class="section-label">Information We Collect</p>
@@ -243,53 +243,65 @@
             <ul class="data-list">
                 <li>Alarm settings</li>
                 <li>Repeat schedules</li>
-                <li>Selected wake-up missions</li>
-                <li>Mission history</li>
-                <li>Streaks and basic in-app progress</li>
+                <li>Wake Up Selfie settings and completion status</li>
+                <li>Basic in-app progress or history</li>
                 <li>App preferences and settings</li>
             </ul>
         </div>
 
         <div class="card card--sunrise">
             <h2>Camera Access</h2>
-            <p>Folarm may request access to your device camera for wake-up missions such as awake selfies or other photo-based tasks. Camera access is used only for app functionality.</p>
-            <p>For AI-assisted camera missions, Folarm may send a captured image to OpenAI's API to analyze whether you appear awake. This analysis is used only to complete the wake-up mission.</p>
-            <p>Folarm does not use camera missions to identify you, verify your identity, match your face against other images, or create a biometric profile.</p>
-            <p>If the app stores any captured images, those images are stored locally on your device unless stated otherwise inside the app. Folarm does not require a cloud account for these features.</p>
+            <p>Folarm requests camera access for the Wake Up Selfie flow. Camera access is used to capture a selfie during the alarm flow.</p>
+            <p>Folarm does not request access to your photo library for this feature. Folarm does not use Wake Up Selfie to identify you, verify your identity, match your face against other images, or create a biometric profile.</p>
+        </div>
+
+        <div class="card card--sky">
+            <h2>Alarm Permission and AlarmKit</h2>
+            <p>Folarm may request iOS alarm authorization, including AlarmKit authorization where available, to schedule and manage alarms. This permission is used only to provide alarm functionality.</p>
+        </div>
+
+        <div class="card card--lavender">
+            <h2>Motion &amp; Fitness Permission</h2>
+            <p>Motion &amp; Fitness permission may still exist in the current build for motion-based interactions, but it is not part of the primary live Wake Up Selfie flow. If requested, this permission is used only for in-app motion interactions and can be managed in iPhone Settings.</p>
+        </div>
+
+        <div class="card card--sunrise">
+            <h2>OpenAI API Selfie Verification</h2>
+            <p>If OpenAI verification is configured for Wake Up Selfie, Folarm may send the captured selfie image and a limited instruction to OpenAI's API to help determine whether the user appears awake.</p>
+            <p>This processing is used only for the Wake Up Selfie verification flow. Folarm does not use OpenAI verification to identify the user, verify identity, match faces, or create a biometric profile.</p>
         </div>
 
         <p class="section-label">Account, Sharing, and Storage</p>
 
         <div class="card card--mint">
             <h2>No Account Required</h2>
-            <p>Folarm does not require you to create an account or sign in to use its core features.</p>
+            <p>Folarm does not require you to create an account or sign in. Folarm does not currently offer subscriptions or in-app purchases.</p>
         </div>
 
         <div class="card">
             <h2>Data Sharing</h2>
             <p>Folarm does not sell your personal information.</p>
-            <p>Folarm may use OpenAI's API as a service provider for AI-assisted camera missions. When this happens, a captured image and a limited instruction may be sent to OpenAI to evaluate wakefulness, such as whether your eyes appear open.</p>
-            <p>OpenAI states that API data is not used to train OpenAI models by default unless the API customer opts in. OpenAI may process and retain API data according to its platform data controls, including abuse monitoring and safety checks.</p>
-            <p>Folarm does not use third-party advertising SDKs. If future versions add optional analytics, advertising, or other third-party services, this Privacy Policy will be updated before those changes take effect.</p>
+            <p>Folarm may share a Wake Up Selfie image with OpenAI as a service provider only when OpenAI verification is configured for the selfie check. OpenAI processes that request according to its applicable API terms and policies.</p>
+            <p>Folarm does not request location, microphone, contacts, photo library, Bluetooth, tracking, HealthKit, or Face ID permissions. Folarm does not use third-party advertising SDKs.</p>
         </div>
 
         <div class="card card--coral">
             <h2>Data Storage</h2>
-            <p>Folarm is designed to store core app data locally on your device. Because of this, deleting the app may also delete locally stored app data unless your device backup settings preserve it.</p>
-            <p>Folarm does not maintain an online account or cloud photo library for your wake-up missions. AI-assisted image analysis, when used, is limited to the mission check described above.</p>
+            <p>Folarm stores core app data locally on your device. Because of this, deleting the app may also delete locally stored app data unless your device backup settings preserve it.</p>
+            <p>Folarm does not maintain an online account or cloud photo library for Wake Up Selfie. OpenAI verification, when configured, is limited to the selfie check described above.</p>
         </div>
 
         <p class="section-label">Permissions and Choices</p>
 
         <div class="card card--sky">
-            <h2>Notifications and Permissions</h2>
-            <p>Folarm may request permissions needed to provide its features, such as notifications and camera access.</p>
-            <p>You can manage permissions at any time in your iPhone Settings.</p>
+            <h2>Permissions</h2>
+            <p>Folarm may request permissions needed to provide its current features, including alarm authorization, camera access, and, if present in the build, Motion &amp; Fitness permission for motion-based interactions.</p>
+            <p>You can manage app permissions at any time in iPhone Settings.</p>
         </div>
 
         <div class="card card--lavender">
             <h2>Your Choices</h2>
-            <p>You can disable permissions in iPhone Settings, delete alarms and app data inside the app where supported, or delete the app from your device. If you disable camera access, camera-based missions may not work.</p>
+            <p>You can disable permissions in iPhone Settings, delete alarms and app data inside the app where supported, or delete Folarm from your device. Disabling alarm authorization or camera access may prevent core alarm or Wake Up Selfie functionality from working correctly.</p>
         </div>
 
         <p class="section-label">Legal</p>
