@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1018">
+    <meta name="description" content="Privacy Policy for Cosmic Mirror, a simple daily horoscope app.">
+    <title>Cosmic Mirror Privacy Policy</title>
+    <style>
+        :root {
+            --bg-base: #0f1018;
+            --bg-panel: rgba(255, 255, 255, 0.045);
+            --bg-panel-hover: rgba(255, 255, 255, 0.068);
+            --border-subtle: rgba(255, 255, 255, 0.11);
+            --border-card: rgba(255, 255, 255, 0.075);
+            --text-primary: rgba(255, 255, 255, 0.94);
+            --text-secondary: rgba(255, 255, 255, 0.63);
+            --text-tertiary: rgba(255, 255, 255, 0.40);
+            --moon: #f4d68f;
+            --rose: #ff8a9a;
+            --aqua: #79dfd7;
+            --sky: #91c8ff;
+            --violet: #b7a8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+            color: var(--text-primary);
+            background:
+                linear-gradient(180deg, rgba(183, 168, 255, 0.08) 0%, rgba(15, 16, 24, 0) 34%),
+                linear-gradient(135deg, #0f1018 0%, #171426 52%, #101921 100%);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 24px 48px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 32px;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--aqua);
+        }
+
+        .back-link::before {
+            content: "\2190\00a0";
+        }
+
+        h1 {
+            margin-bottom: 14px;
+            font-size: clamp(2.15rem, 8vw, 2.75rem);
+            font-weight: 760;
+            letter-spacing: 0;
+            line-height: 1.08;
+            background: linear-gradient(135deg, var(--violet) 0%, var(--sky) 48%, var(--moon) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro {
+            margin-bottom: 46px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            font-size: 1.14rem;
+            font-weight: 680;
+            letter-spacing: 0;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--aqua);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--sky);
+        }
+
+        .card,
+        .notice {
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            background: var(--bg-panel);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .card {
+            padding: 26px;
+            margin-bottom: 20px;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-subtle);
+            background: var(--bg-panel-hover);
+        }
+
+        .card p:last-child,
+        .notice p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card--moon { border-left: 2px solid var(--moon); }
+        .card--rose { border-left: 2px solid var(--rose); }
+        .card--aqua { border-left: 2px solid var(--aqua); }
+        .card--sky { border-left: 2px solid var(--sky); }
+        .card--violet { border-left: 2px solid var(--violet); }
+
+        .section-label {
+            margin: 46px 0 18px;
+            color: var(--text-tertiary);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .data-list {
+            display: grid;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .data-list li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .data-list li::before {
+            content: "";
+            position: absolute;
+            top: 0.78em;
+            left: 4px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--violet);
+            opacity: 0.84;
+        }
+
+        .notice {
+            margin-bottom: 20px;
+            padding: 24px 26px;
+            border-color: rgba(244, 214, 143, 0.18);
+            background: linear-gradient(135deg, rgba(244, 214, 143, 0.12), rgba(255, 255, 255, 0.04));
+        }
+
+        .notice h2 {
+            color: var(--moon);
+            font-size: 1.04rem;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.86rem;
+        }
+
+        footer span,
+        footer a {
+            color: var(--text-tertiary);
+        }
+
+        footer a:hover {
+            color: var(--aqua);
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                padding: 48px 18px 36px;
+            }
+
+            .card,
+            .notice {
+                padding: 21px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a href="index.html" class="back-link">Support</a>
+
+        <h1>Privacy Policy for Cosmic Mirror</h1>
+        <p class="intro">Last updated: April 28, 2026. Cosmic Mirror is designed to be simple and private.</p>
+
+        <div class="card card--violet">
+            <h2>Information We Collect</h2>
+            <p>Cosmic Mirror asks for your date of birth so it can calculate your zodiac sign and personalize your daily horoscope.</p>
+            <p>This information is stored locally on your device. We do not create accounts, collect names, collect email addresses, or store your date of birth on our servers.</p>
+        </div>
+
+        <p class="section-label">Data and Storage</p>
+
+        <div class="card card--sky">
+            <h2>Network Requests</h2>
+            <p>Cosmic Mirror uses a third-party astrology API to retrieve daily astrology data. The app may send the selected date and general astrology request data to this API. Your name, email address, or account information is not sent because the app does not collect those details.</p>
+        </div>
+
+        <div class="card card--aqua">
+            <h2>Local Storage</h2>
+            <p>Cosmic Mirror stores app preferences locally on your device, including your date of birth, daily view streak, and cached horoscope data.</p>
+        </div>
+
+        <div class="card card--moon">
+            <h2>Widgets</h2>
+            <p>If you use the Cosmic Mirror widget, a small summary of your horoscope may be stored locally in an app group so the widget can display it.</p>
+        </div>
+
+        <p class="section-label">Use and Sharing</p>
+
+        <div class="card card--rose">
+            <h2>Analytics and Advertising</h2>
+            <p>Cosmic Mirror does not use advertising tracking.</p>
+            <p>Cosmic Mirror does not currently use third-party analytics.</p>
+        </div>
+
+        <div class="card">
+            <h2>Data Sharing</h2>
+            <p>We do not sell your personal information.</p>
+            <p>We do not share your personal information with advertisers.</p>
+        </div>
+
+        <div class="card card--aqua">
+            <h2>Data Deletion</h2>
+            <p>You can delete locally stored app data by deleting the app from your device.</p>
+        </div>
+
+        <p class="section-label">Legal</p>
+
+        <div class="notice">
+            <h2>Children's Privacy</h2>
+            <p>Cosmic Mirror is not intended for children under 13.</p>
+        </div>
+
+        <div class="card">
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last updated" date above.</p>
+        </div>
+
+        <div class="card card--moon">
+            <h2>Contact</h2>
+            <p>For privacy questions, contact <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a>.</p>
+            <p>Website: <a href="index.html">Cosmic Mirror support site</a></p>
+        </div>
+
+        <footer>
+            <span>Contact: <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a></span>
+            <span>Developer: Kanishk Tiwari</span>
+            <span>App: Cosmic Mirror</span>
+        </footer>
+    </main>
+</body>
+</html>

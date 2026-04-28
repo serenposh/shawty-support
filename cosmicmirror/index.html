@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1018">
+    <meta name="description" content="Cosmic Mirror support page for help, feedback, and common questions.">
+    <title>Cosmic Mirror Support</title>
+    <style>
+        :root {
+            --bg-base: #0f1018;
+            --bg-panel: rgba(255, 255, 255, 0.045);
+            --bg-panel-hover: rgba(255, 255, 255, 0.068);
+            --border-subtle: rgba(255, 255, 255, 0.11);
+            --border-card: rgba(255, 255, 255, 0.075);
+            --text-primary: rgba(255, 255, 255, 0.94);
+            --text-secondary: rgba(255, 255, 255, 0.63);
+            --text-tertiary: rgba(255, 255, 255, 0.40);
+            --moon: #f4d68f;
+            --rose: #ff8a9a;
+            --aqua: #79dfd7;
+            --sky: #91c8ff;
+            --violet: #b7a8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+            color: var(--text-primary);
+            background:
+                linear-gradient(180deg, rgba(244, 214, 143, 0.08) 0%, rgba(15, 16, 24, 0) 34%),
+                linear-gradient(135deg, #0f1018 0%, #171426 52%, #101921 100%);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 24px 48px;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 26px;
+        }
+
+        .app-mark {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            flex: 0 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+            background:
+                radial-gradient(circle at 64% 30%, rgba(255, 255, 255, 0.95) 0 2px, transparent 3px),
+                radial-gradient(circle at 24% 68%, rgba(255, 255, 255, 0.82) 0 1px, transparent 2px),
+                linear-gradient(145deg, rgba(183, 168, 255, 0.96), rgba(145, 200, 255, 0.86) 48%, rgba(244, 214, 143, 0.74));
+            box-shadow: 0 18px 48px rgba(145, 200, 255, 0.18);
+        }
+
+        .app-mark::before {
+            content: "";
+            position: absolute;
+            left: 13px;
+            top: 12px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(15, 16, 24, 0.74);
+            box-shadow: 6px -2px 0 var(--moon);
+        }
+
+        .eyebrow {
+            color: var(--text-tertiary);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-bottom: 14px;
+            font-size: clamp(2.15rem, 8vw, 2.75rem);
+            font-weight: 760;
+            letter-spacing: 0;
+            line-height: 1.08;
+            background: linear-gradient(135deg, var(--moon) 0%, var(--aqua) 45%, var(--violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro {
+            margin-bottom: 46px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            font-size: 1.14rem;
+            font-weight: 680;
+            letter-spacing: 0;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--aqua);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--sky);
+        }
+
+        .card,
+        .faq-item,
+        .notice {
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            background: var(--bg-panel);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .card {
+            padding: 26px;
+            margin-bottom: 20px;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card:hover,
+        .faq-item:hover {
+            border-color: var(--border-subtle);
+            background: var(--bg-panel-hover);
+        }
+
+        .card p:last-child,
+        .notice p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card--moon { border-left: 2px solid var(--moon); }
+        .card--rose { border-left: 2px solid var(--rose); }
+        .card--aqua { border-left: 2px solid var(--aqua); }
+        .card--sky { border-left: 2px solid var(--sky); }
+        .card--violet { border-left: 2px solid var(--violet); }
+
+        .section-label {
+            margin: 46px 0 18px;
+            color: var(--text-tertiary);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .features {
+            display: grid;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .features li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .features li::before {
+            content: "";
+            position: absolute;
+            top: 0.78em;
+            left: 4px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--moon);
+            opacity: 0.84;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            padding: 22px 24px;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .faq-item strong {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--text-primary);
+            font-size: 0.96rem;
+            font-weight: 660;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 0.92rem;
+        }
+
+        .notice {
+            margin-bottom: 20px;
+            padding: 24px 26px;
+            border-color: rgba(244, 214, 143, 0.18);
+            background: linear-gradient(135deg, rgba(244, 214, 143, 0.12), rgba(255, 255, 255, 0.04));
+        }
+
+        .notice h2 {
+            color: var(--moon);
+            font-size: 1.04rem;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.86rem;
+        }
+
+        footer span,
+        footer a {
+            color: var(--text-tertiary);
+        }
+
+        footer a:hover {
+            color: var(--aqua);
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                padding: 48px 18px 36px;
+            }
+
+            .brand-row {
+                gap: 12px;
+            }
+
+            .app-mark {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+            }
+
+            .card,
+            .faq-item,
+            .notice {
+                padding: 21px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="brand-row">
+            <div class="app-mark" aria-hidden="true"></div>
+            <div>
+                <p class="eyebrow">Cosmic Mirror for iPhone</p>
+                <h1>Cosmic Mirror Support</h1>
+            </div>
+        </div>
+
+        <p class="intro">Cosmic Mirror is a simple daily horoscope app. If you need help, have feedback, or want to report an issue, contact us and we will do our best to help.</p>
+
+        <div class="card card--moon">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a></p>
+            <p>Website: <a href="index.html">Cosmic Mirror support site</a></p>
+            <p>App: Cosmic Mirror</p>
+        </div>
+
+        <p class="section-label">What Cosmic Mirror Does</p>
+
+        <div class="card card--sky">
+            <h2>Daily Horoscope</h2>
+            <p>Cosmic Mirror uses your date of birth to calculate your zodiac sign and personalize a simple daily reading.</p>
+            <ul class="features">
+                <li>Get a daily horoscope based on your zodiac sign</li>
+                <li>Use the app without creating an account</li>
+                <li>Keep your date of birth and app activity stored locally on your device</li>
+                <li>Use a widget to show a small local horoscope summary</li>
+            </ul>
+        </div>
+
+        <p class="section-label">Common Questions</p>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <strong>Do I need an account?</strong>
+                <p>No. Cosmic Mirror does not require an account.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Is my horoscope saved online?</strong>
+                <p>No. Your date of birth and app activity are stored locally on your device.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Why does my horoscope change each day?</strong>
+                <p>Cosmic Mirror uses daily astrology data to create a simple daily reading.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>How do I reset the app?</strong>
+                <p>Delete and reinstall the app to clear local data.</p>
+            </div>
+        </div>
+
+        <p class="section-label">Troubleshooting</p>
+
+        <div class="card card--aqua">
+            <h2>If Something Is Not Working</h2>
+            <ul class="features">
+                <li>Close and reopen the app</li>
+                <li>Check that the latest version is installed</li>
+                <li>Make sure your device has an internet connection for daily astrology data</li>
+                <li>Delete and reinstall the app if you want to clear local data</li>
+            </ul>
+        </div>
+
+        <div class="notice">
+            <h2>Response Time</h2>
+            <p>We aim to respond as quickly as possible, usually within a few business days.</p>
+        </div>
+
+        <div class="card card--violet">
+            <h2>Contact Us</h2>
+            <p>For all support requests, email <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a>.</p>
+            <p>Read the full <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+        <footer>
+            <span>Contact: <a href="mailto:kanishk.chores@gmail.com">kanishk.chores@gmail.com</a></span>
+            <span>Developer: Kanishk Tiwari</span>
+            <span>App: Cosmic Mirror</span>
+        </footer>
+    </main>
+</body>
+</html>
